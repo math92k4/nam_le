@@ -10,10 +10,42 @@
 
 <body>
     <header></header>
+    <section>
+        <h1>Sustainability</h1>
+        <div id="container">
+        </div>
+    </section>
 
-</body>
-<footer></footer>
-<script src="script.js"></script>
-<script></script>
 
-</html>
+    <footer></footer>
+
+
+    <template>
+        <h2></h2>
+        <img src="" alt="" id="billede">
+        <div class="tekst"></div>
+    </template>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", getTheContent);
+
+
+        async function getTheContent() {
+            let pods;
+            let temp = document.querySelector("template");
+            let url = "https://mathaeusss.dk/kea/2_semester/nam_le/wordpress/wp-json/wp/v2/sustainability/";
+            let jsonData = await fetch(url);
+            pods = await jsonData.json();
+
+            pods.forEach(pod => {
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector("h2").textContent = pod.overskrift;
+                klon.querySelector("#billede").src = pod.billede.guid;
+                klon.querySelector(".tekst").innerHTML = pod.content.rendered;
+                container.appendChild(klon);
+            })
+
+
+        }
+    </script>
+</body></html>

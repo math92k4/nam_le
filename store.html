@@ -10,9 +10,55 @@
 
 <body>
     <header></header>
+    <section>
+        <div class="container">
+        </div>
+    </section>
 </body>
 <footer></footer>
-<script src="script.js"></script>
-<script></script>
 
-</html>
+<template>
+    <img src="" alt="">
+</template>
+
+<script src="script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", getTheContent);
+
+
+    async function getTheContent() {
+        let pods;
+        let url = "https://mathaeusss.dk/kea/2_semester/nam_le/wordpress/wp-json/wp/v2/store";
+        const temp = document.querySelector("template");
+        const container = document.querySelector(".container");
+        let jsonData = await fetch(url);
+        pods = await jsonData.json();
+
+        pods.forEach(pod => {
+            let klon = temp.cloneNode(true).content;
+            klon.querySelector("img").src = pod.billede.guid;
+            klon.querySelector("img").dataset.kategori = pod.kategori;
+            klon.querySelector("img").dataset.id = pod.id;
+            klon.querySelector("img").addEventListener("click", singleView);
+            klon.querySelector("img").addEventListener("mouseover", klikBart);
+            container.appendChild(klon);
+
+        });
+    }
+
+
+
+    function singleView() {
+        if (this.dataset.kategori == 3) {
+            let id = this.dataset.id;
+            window.location.href = "view.html?id=" + id;
+        }
+        console.log(this.dataset.id);
+    }
+
+    function klikBart() {
+        if (this.dataset.kategori == 3) {
+            this.style.cursor = "pointer";
+        }
+    }
+</script></html>

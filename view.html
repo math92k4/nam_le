@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header></header>
+    <section>
+        <img src="" alt="" id="produktbillede">
+        <div>
+            <h1></h1>
+            <p id="pris"></p>
+            <p id="farve"><b>Colors: </b></p>
+            <p id="stoerrelse"><b>Sizes: </b></p>
+            <p id="model"></p>
+            <p>Created by using zero-waste pattern cutting</p>
+            <p>Crafted by GOTS-certified organic cotton</p>
+            <button>PRE-ORDER</button>
+            <p><b>Please note:</b> all garments are made to order (lead time: 2-4 weeks)</p>
+        </div>
+
+    </section>
+    <footer></footer>
+
+
+
+
+    <script src="script.js"></script>
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+        document.addEventListener("DOMContentLoaded", getTheContent);
+
+
+        async function getTheContent() {
+            let pods;
+            let url = "https://mathaeusss.dk/kea/2_semester/nam_le/wordpress/wp-json/wp/v2/store/" + id;
+            let jsonData = await fetch(url);
+            pods = await jsonData.json();
+
+            document.querySelector("#pris").textContent = pods.pris;
+            document.querySelector("#farve").textContent += pods.farve;
+            document.querySelector("#stoerrelse").textContent += pods.stoerrelse;
+            document.querySelector("#model").textContent = pods.model;
+            document.querySelector("#produktbillede").src = pods.billede.guid;
+
+            console.log(url);
+        }
+    </script>
+
+</body></html>

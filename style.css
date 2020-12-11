@@ -1,5 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .orange {}
 
+:root {
+    --black: #151515;
+    --white: #ffffff;
+    --farve1: #db9466;
+    --farve2: #b2aca1;
+    --farve3: #394892;
+}
+
+
+/*fonte*/
+a,
+p,
+h1,
+h2,
+h3,
+button {
+    font-family: "helvetica", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.5rem;
+}
 
 header {
     display: flex;
@@ -10,4 +40,24 @@ header {
 #logo {
     width: 300px;
     display: block;
+}
+
+img {
+    width: 100%;
+}
+
+footer div {
+    background-color: var(--farve2);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer a {
+    font-size: 7vw;
+    text-decoration: none;
+    color: white;
+}
+
+.cirkel {
+    margin: 0 5vw;
 }
