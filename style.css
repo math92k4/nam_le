@@ -1,0 +1,13 @@
+.orange {}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#logo {
+    width: 300px;
+    display: block;
+}
