@@ -11,10 +11,12 @@
 <body>
     <!--universel header-->
     <header></header>
-    <section>
+    <section id="forside_section">
         <div>
+            <h1 id="forside_h1"><span>NAM</span> <span>LĒ</span></h1>
+
             <img src="" alt="" id="forsidevideo">
-            <h1 id="tagline"></h1>
+            <h2 id="tagline"></h2>
         </div>
     </section>
 
@@ -28,16 +30,13 @@
             let url = "https://mathaeusss.dk/kea/2_semester/nam_le/wordpress/wp-json/wp/v2/frontpage/13";
             let jsonData = await fetch(url);
             page = await jsonData.json();
-            document.querySelector("h1").textContent = page.tagline;
+            document.querySelector("h2").textContent = page.tagline;
             document.querySelector("#forsidevideo").src = page.forsidevideo.guid;
 
             console.log(page);
         }
-
     </script>
 
 </body>
 
-<footer></footer>
-
-</html>
+<footer></footer></html>
