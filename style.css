@@ -39,18 +39,18 @@ img {
     width: 100%;
 }
 
-body {
-    overflow-x: hidden;
-}
+body {}
 
 
 
 /********** HEADER  ******/
 
 header {
+    position: fixed;
     height: 65px;
-    position: sticky;
     top: 0;
+    z-index: 4;
+    width: 100%;
 }
 
 /*flexer logo og burgermenu i mobil*/
@@ -78,11 +78,13 @@ header {
 
 
 #menu {
-    position: relative;
+    position: absolute;
+    transform-origin: top left;
+    width: 100%;
+    height: 100vh;
     transition: all .3s ease-in-out;
     transform: translateX(50%) translateY(-65px);
-    background-color: var(--white);
-    height: 100vh;
+    background-color: white;
     z-index: -1;
     padding: 85px 0 0 0;
 }
@@ -176,12 +178,12 @@ footer {
     position: sticky;
     bottom: 0;
     padding: 20px 10px;
-    z-index: -1;
+    z-index: 1;
 }
 
 #footer_container {
     font-family: "helvetica", sans-serif;
-    font-size: 9vw;
+    font-size: calc(8.5vw);
     color: white;
     line-height: 12vw;
 }
@@ -231,7 +233,7 @@ footer {
 
 /***** FORSIDE *******/
 #forside_h1 {
-    font-size: 25vw;
+    font-size: 24vw;
     color: var(--farve1);
 }
 
@@ -239,13 +241,13 @@ footer {
     max-width: 50vw;
     font-size: 7vw;
     color: var(--farve2);
-    margin-bottom: 10vw;
 }
 
 #forside_section {
-    height: calc(100vh - 65px);
+    position: relative;
+    height: 100vh;
     background-color: white;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
