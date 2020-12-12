@@ -13,12 +13,23 @@
     <section id="store_section">
         <div class="store_container">
         </div>
+
+        <div id="tooltip">
+            <p id="navn_hover"></p>
+            <p id="pris_hover"></p>
+        </div>
     </section>
 </body>
 <footer></footer>
 
 <template>
-    <img src="" alt="">
+    <div class="produkt_container">
+        <img src="" alt="">
+        <div class="infobox">
+            <p class="navn"></p>
+            <p class="pris"></p>
+        </div>
+    </div>
 </template>
 
 <script src="script.js"></script>
@@ -34,34 +45,75 @@
         let jsonData = await fetch(url);
         pods = await jsonData.json();
 
+        //For hvert pod
         pods.forEach(pod => {
+            //kloner vi templaten fra html'en
             let klon = temp.cloneNode(true).content;
+            //og indsætter de vores endpoints i de tilhørende tags i templatet.
+            klon.querySelector(".navn").textContent = pod.navn;
+            klon.querySelector(".pris").textContent = pod.pris;
             klon.querySelector("img").src = pod.billede.guid;
-            klon.querySelector("img").dataset.kategori = pod.kategori;
-            klon.querySelector("img").dataset.id = pod.id;
-            klon.querySelector("img").addEventListener("click", singleView);
-            klon.querySelector("img").addEventListener("mouseover", klikBart);
+
+            //Hvis podded har kategorien "produkt" (json spytter tallet 3 ud)
+            if (pod.kategori == 3) {
+                //(img'en bliver indsat i varabel for lethedens skyld)
+                let produkt = klon.querySelector("img");
+
+                //Styler vi tagget så det ser klikbart ud,
+                produkt.style.cursor = "pointer";
+                //lytter på klik til singleview
+                produkt.addEventListener("click", singleView);
+                //lytter på hover ift tooltip
+                produkt.addEventListener("mouseover", e => toolTip(e));
+                //lytter på vi fjerner musen igen så vi kan fjerne tooltip
+                produkt.addEventListener("mouseout", hideTooltip);
+                //Indsætter nedenstående data-atributter som vi skal bruge i senere funktioner
+                produkt.dataset.navn = pod.navn;
+                produkt.dataset.pris = pod.pris;
+                produkt.dataset.id = pod.id;
+            }
+
+            //Når tamplatet er udfyldt, indsættes det i vores container i html'en
             container.appendChild(klon);
-
         });
+
+
     }
 
 
-
+    //Tidligere nævnte data-attribut (produktets id) indsættes i singleview-url'en som et id. Derved kan id'et efterfølgende hentes ned med java i singleview.html
     function singleView() {
-        if (this.dataset.kategori == 3) {
-            let id = this.dataset.id;
-            window.location.href = "view.html?id=" + id;
-        }
-        console.log(this.dataset.id);
+        let id = this.dataset.id;
+        window.location.href = "view.html?id=" + id;
     }
 
-    function klikBart() {
-        if (this.dataset.kategori == 3) {
-            this.style.cursor = "pointer";
-        }
+
+
+    //Mouse over funtionen indhenter dataset-navn og pris fra produktet og indsætter det i tooltip-boxen. Boxen vises.
+    function toolTip(e) {
+        document.querySelector("#navn_hover").textContent = e.target.dataset.navn;
+        document.querySelector("#pris_hover").textContent = e.target.dataset.pris;
+
+        document.querySelector("#tooltip").classList.add("show_tooltip");
     }
 
-</script>
 
-</html>
+    //Mouse-out funtionen fjerner tooltip-boxen.
+    function hideTooltip() {
+        document.querySelector("#tooltip").classList.remove("show_tooltip");
+    }
+
+
+
+    let y;
+    let x;
+    let toolTipPos = document.querySelector("#tooltip");
+
+    //Når musen bevæges indhentes musens x og y værdi. Disse værdier sættes = tooltip-boxens position.
+    window.onmousemove = function(e) {
+        x = e.clientX;
+        y = e.clientY;
+        toolTipPos.style.top = (y + 20) + 'px';
+        toolTipPos.style.left = (x + 20) + 'px';
+    };
+</script></html>
