@@ -183,7 +183,7 @@ footer {
 
 #footer_container {
     font-family: "helvetica", sans-serif;
-    font-size: calc(8.5vw);
+    font-size: 8.5vw;
     color: white;
     line-height: 12vw;
 }
@@ -232,14 +232,17 @@ footer {
 
 
 /***** FORSIDE *******/
-#forside_h1 {
-    font-size: 24vw;
-    color: var(--farve1);
+#nam {
+    background-image: url("img/namle.svg");
+    width: 90vw;
+    height: calc(90vw/300*71);
+    background-size: cover;
+    margin-bottom: 10px;
 }
 
 #tagline {
-    max-width: 50vw;
-    font-size: 7vw;
+    max-width: 300px;
+    font-size: 2rem;
     color: var(--farve2);
 }
 
@@ -252,4 +255,73 @@ footer {
     flex-direction: column;
     justify-content: center;
     padding: 0 10px;
+}
+
+
+@media (min-width: 800px) {
+
+    #forside_container {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1.5fr 1fr;
+        max-width: 1130px;
+        margin: 0 auto;
+    }
+
+    #nam {
+        background-image: url("img/nam.svg");
+        width: calc(11vw/112*300);
+        height: 11vw;
+        margin: 0;
+        max-height: 126px;
+        max-width: calc(126px/112*300);
+        transform: translateY(-75%) translateX(7vw);
+    }
+
+    #le {
+        background-image: url("img/le.svg");
+        width: calc(11vw/150*199);
+        height: 11vw;
+        max-height: 126px;
+        max-width: calc(126px/150*199);
+        background-size: cover;
+        margin: 0 0 10px 0;
+
+
+
+    }
+
+
+    #desktop_tag_le {
+        align-self: flex-end;
+    }
+
+
+
+    #forsidevideo {
+        width: 40vw;
+        max-width: 460px;
+    }
+
+
+
+
+
+
+
+
+
+
+    #footer_container {
+
+        font-size: 5.5vw;
+
+        line-height: 8vw;
+    }
+
+    .cirkle {
+        margin: 0 5vw;
+    }
+
+
 }
