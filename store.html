@@ -10,8 +10,8 @@
 
 <body>
     <header></header>
-    <section>
-        <div class="container">
+    <section id="store_section">
+        <div class="store_container">
         </div>
     </section>
 </body>
@@ -30,7 +30,7 @@
         let pods;
         let url = "https://mathaeusss.dk/kea/2_semester/nam_le/wordpress/wp-json/wp/v2/store";
         const temp = document.querySelector("template");
-        const container = document.querySelector(".container");
+        const container = document.querySelector(".store_container");
         let jsonData = await fetch(url);
         pods = await jsonData.json();
 
@@ -61,4 +61,7 @@
             this.style.cursor = "pointer";
         }
     }
-</script></html>
+
+</script>
+
+</html>

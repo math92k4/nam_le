@@ -258,6 +258,34 @@ footer {
 }
 
 
+
+
+
+/****** STORE ******/
+#store_section {
+    position: relative;
+    z-index: 2;
+    background-color: white;
+}
+
+.store_container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+    padding: 65px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 800px) {
 
     #forside_container {
@@ -323,5 +351,17 @@ footer {
         margin: 0 5vw;
     }
 
+
+
+
+
+
+
+
+
+
+    .store_container {
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    }
 
 }
