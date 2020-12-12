@@ -241,7 +241,7 @@ footer {
 }
 
 #tagline {
-    max-width: 300px;
+    max-width: 250px;
     font-size: 2rem;
     color: var(--farve2);
 }
@@ -255,6 +255,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     padding: 0 10px;
+
+    box-shadow: 0px 15px 17px 1px rgba(153, 147, 138, 0.5);
 }
 
 
@@ -286,7 +288,7 @@ footer {
 
 
 
-@media (min-width: 800px) {
+@media (min-width: 700px) {
 
     #forside_container {
         display: grid;
@@ -303,7 +305,7 @@ footer {
         margin: 0;
         max-height: 126px;
         max-width: calc(126px/112*300);
-        transform: translateY(-75%) translateX(7vw);
+        transform: translateY(-10vw) translateX(7vw);
     }
 
     #le {
@@ -314,12 +316,15 @@ footer {
         max-width: calc(126px/150*199);
         background-size: cover;
         margin: 0 0 10px 0;
-
-
-
     }
 
 
+    #tagline {
+        font-size: 1.6rem;
+    }
+
+
+    /* tagline og "le", alignes ved videoens bund*/
     #desktop_tag_le {
         align-self: flex-end;
     }
@@ -364,4 +369,12 @@ footer {
         grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     }
 
+}
+
+@media (min-width: 1130px) {
+
+    /* udregning af ny fast margin på forside splash.  eks 1130 (100vw) * 0.1 (10vw) = 101.7*/
+    #nam {
+        transform: translateY(-113px) translateX(79.1px);
+    }
 }
