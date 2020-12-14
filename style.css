@@ -443,6 +443,7 @@ footer {
 
     #nam {
         background-image: url("img/nam.svg");
+        /* */
         width: calc(11vw/112*300);
         height: 11vw;
         margin: 0;
@@ -540,10 +541,10 @@ footer {
 
 
 
-
+/* forsidens reltive værdier ændres til faste (altså fra vw til px) */
 @media (min-width: 1130px) {
 
-    /* udregning af ny fast margin på forside splash.  eks 1130 (100vw) * 0.1 (10vw) = 101.7*/
+    /* udregning af ny fast margin på forside splash.  eks 1130 (100vw) * 0.1 (10vw) = 113px*/
     #nam {
         transform: translateY(-113px) translateX(79.1px);
     }
