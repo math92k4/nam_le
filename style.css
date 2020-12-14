@@ -41,7 +41,7 @@ p {
 a {
     text-decoration: none;
     color: var(--black);
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 
@@ -118,6 +118,7 @@ header {
 #menu a {
     margin: 10px;
     display: block;
+    font-weight: 500;
 }
 
 #menu #sustainability_href {
@@ -330,14 +331,16 @@ footer {
     position: relative;
     z-index: 2;
     background-color: white;
+    box-shadow: var(--shadowf);
+
+    padding: 65px 10px;
 }
 
 .store_container {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 
-    padding: 65px 10px;
 }
 
 .infobox {}
@@ -358,8 +361,8 @@ footer {
 
 #tooltip {
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.7);
-    ;
+    background-color: rgba(178, 172, 161, 0.9);
+
     display: none;
     z-index: 100;
     padding: 10px;
@@ -368,8 +371,6 @@ footer {
 .show_tooltip {
     display: none;
 }
-
-
 
 
 
@@ -447,7 +448,7 @@ footer {
     margin: 10px 0 0 0;
 }
 
-.info_section h1 {
+.main_h1 {
     font-size: 2rem;
     text-align: center;
     margin: 65px 0;
@@ -598,10 +599,6 @@ footer {
 
 
 
-    .store_container {
-        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-        box-shadow: var(--shadowf);
-    }
 
 }
 
@@ -612,6 +609,9 @@ footer {
 
 
 @media (min-width: 700px) {
+
+
+    /* Header fold ud */
 
     .menu_btn {
         display: none;
@@ -651,6 +651,20 @@ footer {
         min-width: 120px;
     }
 
+
+
+
+
+    /* Store */
+
+
+    .store_container {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+
+
+
+
 }
 
 
@@ -666,7 +680,7 @@ footer {
 @media (min-width: 1000px) {
 
 
-
+    /* Store*/
     .show_tooltip {
         display: block !important;
     }
@@ -674,6 +688,11 @@ footer {
 
     .infobox {
         display: none;
+    }
+
+
+    .store_container {
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     }
 
 }
