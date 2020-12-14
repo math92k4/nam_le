@@ -338,7 +338,7 @@ footer {
 
 .store_container {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 5px;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 
 }
@@ -371,6 +371,72 @@ footer {
 .show_tooltip {
     display: none;
 }
+
+
+
+
+
+
+
+
+
+/****** Singleview ***/
+
+#view_section {
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    box-shadow: var(--shadowf);
+
+    padding: 65px 10px;
+}
+
+.view_wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#view_section h1 {
+    font-size: 3rem;
+    color: var(--farve1);
+    margin: 0 0 15px 0;
+}
+
+#view_section #pris,
+#view_section #stoerrelse,
+#view_section #model,
+#view_section .view_margin {
+    margin: 0 0 10px 0;
+}
+
+button {
+    border: none;
+    border-radius: none;
+    background-color: var(--farve2);
+    padding: 15px 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    margin: 35px 0 0 0;
+}
+
+
+
+.view_tekst_wrapper {
+    display: flex;
+    position: relative;
+}
+
+.view_rotate_tekst {
+    position: absolute;
+    transform-origin: top right;
+    transform: rotate(90deg);
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
 
 
 
@@ -726,6 +792,10 @@ footer {
 
     }
 
+    .view_wrapper {
+        max-width: none;
+        display: flex;
+    }
 
 
     .info_container h2 {
