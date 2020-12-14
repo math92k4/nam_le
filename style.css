@@ -33,7 +33,7 @@ button {
 
 p {
     color: var(--black);
-    line-height: 20px;
+    line-height: 25px;
     font-size: 1rem
 }
 
@@ -305,7 +305,7 @@ footer {
 
 #forside_section {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     background-color: white;
     z-index: 2;
     display: flex;
@@ -409,13 +409,16 @@ footer {
     margin: 0 0 10px 0;
 }
 
+#view_section .view_margin2 {
+    margin: 15px 0 0 0;
+}
+
 button {
     border: none;
-    border-radius: none;
     background-color: var(--farve2);
-    padding: 15px 10px;
-    font-size: 1.2rem;
-    font-weight: 600;
+    padding: 15px 15px;
+    font-size: 1rem;
+    font-weight: 500;
     color: white;
     cursor: pointer;
     margin: 35px 0 0 0;
@@ -518,6 +521,7 @@ button {
     font-size: 2rem;
     text-align: center;
     margin: 65px 0;
+    color: var(--farve2);
 }
 
 
@@ -792,17 +796,67 @@ button {
 
     }
 
-    .view_wrapper {
-        max-width: none;
+
+
+
+    /************* singleview *********/
+
+    #view_section {
+        position: relative;
+        min-height: 100vh;
+        background-color: white;
+        z-index: 2;
         display: flex;
+        box-shadow: var(--shadowf);
     }
 
+    .view_wrapper {
+        width: 100%;
+        max-width: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .view_img_container {
+        margin: 10px;
+        width: 100%;
+        flex-grow: 1;
+        flex-basis: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .view_img_container img {
+        max-width: 550px;
+        margin: 0 auto;
+    }
 
     .info_container h2 {
         margin: 0;
     }
 
+    .view_tekst_wrapper {
+        margin: 10px;
+        width: 100%;
+        flex-grow: 1;
+        flex-basis: 300px;
+        flex-direction: column;
+        justify-content: center;
+    }
 
+
+    .view_rotate_tekst {
+        display: block;
+    }
+
+
+
+
+
+
+    /*generel max-width*/
 
     .max_width {
         max-width: 1350px;

@@ -12,11 +12,14 @@
 <body>
     <header></header>
     <section id="view_section">
-        <div class="view_wrapper">
+
+        <div class="view_wrapper max_width">
             <div class="view_img_container">
                 <img src="" alt="" id="produktbillede">
             </div>
-            <div class="view_tekst_wrapper max_width">
+
+
+            <div class="view_tekst_wrapper">
                 <div class="view_tekst">
                     <h1></h1>
                     <p id="pris"></p>
@@ -25,12 +28,13 @@
                     <p id="model"></p>
                     <p><b>Created by using zero-waste pattern cutting</b></p>
                     <p class="view_margin"><b>Crafted by GOTS-certified organic cotton</b></p>
-                    <p class="view_margin"><b>Please note:</b> all garments are made to order (lead time: 2-4 weeks)</p>
+
                     <button>PRE-ORDER</button>
+                    <p class="view_margin2"><b>Please note:</b> all garments are made to order (lead time: 2-4 weeks)</p>
                 </div>
 
                 <div class="view_rotate_tekst">
-                    <p><i>100% organic 0% fabric waste</i></p>
+                    <p><i>100% organic - 0% fabric waste</i></p>
                 </div>
 
             </div>
@@ -60,6 +64,9 @@
             document.querySelector("#produktbillede").src = pods.billede.guid;
             console.log(url);
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
