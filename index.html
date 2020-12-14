@@ -14,8 +14,8 @@
     <section id="forside_section">
         <div id="forside_container">
             <div id="nam"></div>
-            <img src="" alt="" id="forsidevideo">
-
+            <!--            <img src="" alt="" id="forsidevideo">-->
+            <video src="img/forside_udkast_2.mp4" id="forsidevideo" autoplay muted loop></video>
             <div id="desktop_tag_le">
                 <div id="le"></div>
                 <h1 id="tagline"></h1>
@@ -34,7 +34,7 @@
             let jsonData = await fetch(url);
             page = await jsonData.json();
             document.querySelector("h1").textContent = page.tagline;
-            document.querySelector("#forsidevideo").src = page.forsidevideo.guid;
+            //            document.querySelector("#forsidevideo").src = page.forsidevideo.guid;
 
             console.log(page);
         }
