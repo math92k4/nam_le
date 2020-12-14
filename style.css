@@ -28,20 +28,20 @@ h1,
 h2,
 h3,
 button {
-    font-family: "helvetica", sans-serif;
+    font-family: "proxima-nova", sans-serif;
 }
 
 p {
     color: var(--black);
     line-height: 20px;
-    font-size: 0.9rem
+    font-size: 1rem
 }
 
 /*standart-styling på a-tags*/
 a {
     text-decoration: none;
     color: var(--black);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 
@@ -54,6 +54,12 @@ video {
 }
 
 body {}
+
+
+
+
+
+
 
 
 
@@ -81,7 +87,7 @@ header {
 
 #header_logo {
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .right {
@@ -196,8 +202,9 @@ footer {
     z-index: 1;
 }
 
+
 #footer_container {
-    font-family: "helvetica", sans-serif;
+    font-family: "proxima-nova", sans-serif;
     font-size: 8.5vw;
     color: white;
     line-height: 12vw;
@@ -247,18 +254,52 @@ footer {
 
 
 /***** FORSIDE *******/
+
+
 #nam {
-    background-image: url("img/namle.svg");
-    width: 90vw;
-    height: calc(90vw/300*71);
+    background-image: url("img/nam.svg");
+    width: calc(22vw/122*300);
+    height: 22vw;
+    margin: 0;
+    max-height: 126px;
+    max-width: calc(126px/122*300);
+    margin: 0 0 10px 0;
+    float: right;
+}
+
+#le {
+    background-image: url("img/le.svg");
+    width: calc(22vw/150*199);
+    height: 22vw;
+    max-height: 126px;
+    max-width: calc(126px/150*199);
     background-size: cover;
-    margin-bottom: 10px;
+    margin: 1.33vw 0 0 0;
+
+}
+
+
+
+
+
+#desktop_tag_le {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tagline_mobile_align {
+    display: flex;
 }
 
 #tagline {
-    max-width: 250px;
-    font-size: 2rem;
+    width: 100%;
+    max-width: 50vw;
+    font-size: 7vw;
     color: var(--farve2);
+    align-self: flex-end;
+    transform: translateY(5px);
+    margin: 0 0 0 10px;
+    text-align: end;
 }
 
 #forside_section {
@@ -353,11 +394,29 @@ footer {
     flex-wrap: wrap;
     width: 100%;
     padding: 10px 10px;
+    max-width: 500px;
+    margin: 0 auto;
+
 }
 
-.wrapper:nth-child(even) {
+
+.color_box {
+    padding: 65px 0;
+}
+
+.color_box:nth-child(1) {
+    padding: 0 0 65px 0;
+}
+
+
+.color_box:nth-child(even) .wrapper {
     flex-direction: row-reverse;
+}
+
+
+.color_box:nth-child(even) {
     background-color: var(--farve3);
+    padding: 65px 0;
 }
 
 .img_container {
@@ -381,11 +440,25 @@ footer {
 .info_container h2 {
     font-size: 3rem;
     color: var(--farve1);
+    margin: 30px 0 0 0;
 }
 
 .info_container .tekst {
-    margin: 40px 0 0 0;
+    margin: 10px 0 0 0;
 }
+
+.info_section h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 65px 0;
+}
+
+
+
+
+
+
+
 
 
 
@@ -425,11 +498,19 @@ footer {
 
 
 
+/*
+@media (min-width: 550px) {
+    #tagline {
+        font-size: 38px;
+    }
+}
+*/
 
 
 
 
-@media (min-width: 700px) {
+
+@media (min-width: 500px) {
 
 
     /**** FORSIDE ****/
@@ -445,12 +526,12 @@ footer {
     #nam {
         background-image: url("img/nam.svg");
         /* */
-        width: calc(11vw/112*300);
+        width: calc(11vw/122*300);
         height: 11vw;
         margin: 0;
         max-height: 126px;
-        max-width: calc(126px/112*300);
-        transform: translateY(-10vw) translateX(7vw);
+        max-width: calc(126px/122*300);
+        transform: translateY(-10vw) translateX(4.2vw);
     }
 
     #le {
@@ -464,14 +545,23 @@ footer {
     }
 
 
+    .tagline_mobile_align {
+        display: block;
+    }
+
     #tagline {
-        font-size: 1.6rem;
+        font-size: 3vw;
+        text-align: end;
+        margin: 0;
+        text-align: left;
+        max-width: 19vw;
     }
 
 
     /* tagline og "le", alignes ved videoens bund*/
     #desktop_tag_le {
         align-self: flex-end;
+        display: block;
     }
 
 
@@ -517,6 +607,62 @@ footer {
 
 
 
+
+
+
+
+@media (min-width: 700px) {
+
+    .menu_btn {
+        display: none;
+    }
+
+    #menu {
+        position: relative;
+        height: auto;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    #menu.hidden {
+        transform: none;
+    }
+
+    .right {
+        flex-direction: row;
+    }
+
+    #menu #sustainability_href {
+        margin: auto 10px;
+    }
+
+    header {
+        display: flex;
+    }
+
+    #menu a {
+        margin: auto 10px;
+    }
+
+
+    #header_logo {
+        min-width: 120px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 1000px) {
 
 
@@ -547,6 +693,31 @@ footer {
 
     /* udregning af ny fast margin på forside splash.  eks 1130 (100vw) * 0.1 (10vw) = 113px*/
     #nam {
-        transform: translateY(-113px) translateX(79.1px);
+        transform: translateY(-113px) translateX(47.46px);
     }
+
+    #tagline {
+        font-size: 34px;
+    }
+
+
+
+    .wrapper {
+        max-width: none;
+
+    }
+
+
+
+    .info_container h2 {
+        margin: 0;
+    }
+
+
+
+    .max_width {
+        max-width: 1350px;
+        margin: 0 auto;
+    }
+
 }

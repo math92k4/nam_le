@@ -55,6 +55,6 @@ async function getFooter() {
     let footerData = await fetch(footerUrl);
     footer = await footerData.text();
     document.querySelector("footer").innerHTML = footer;
-    console.log(getFooter);
+
 
 }
