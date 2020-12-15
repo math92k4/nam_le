@@ -66,7 +66,8 @@
                 //lytter på klik til singleview
                 produkt.addEventListener("click", singleView);
                 //lytter på hover ift tooltip (tooltip er det man kalder en hover-infobox  - vi ku kalde den hvad som helst)
-                produkt.addEventListener("mouseover", e => toolTip(e));
+                //                produkt.addEventListener("mouseover", e => toolTip(e));
+                produkt.addEventListener("mouseover", toolTip);
                 //lytter på vi fjerner musen igen så vi kan fjerne tooltip
                 produkt.addEventListener("mouseout", hideTooltip);
                 //Indsætter nedenstående data-atributter som vi skal bruge i senere funktioner
@@ -92,9 +93,10 @@
 
 
     //Mouse over funtionen indhenter dataset-navn og pris fra produktet og indsætter det i tooltip-boxen. Boxen vises.
-    function toolTip(e) {
-        document.querySelector("#navn_hover").textContent = e.target.dataset.navn;
-        document.querySelector("#pris_hover").textContent = e.target.dataset.pris;
+    function toolTip() {
+        console.log(this.dataset.navn);
+        document.querySelector("#navn_hover").textContent = this.dataset.navn;
+        document.querySelector("#pris_hover").textContent = this.dataset.pris;
 
         document.querySelector("#tooltip").classList.add("show_tooltip");
     }
@@ -118,4 +120,7 @@
         toolTipPos.style.top = (y + 20) + 'px';
         toolTipPos.style.left = (x + 20) + 'px';
     };
-</script></html>
+
+</script>
+
+</html>
