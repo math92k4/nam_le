@@ -528,6 +528,7 @@ button {
     font-size: 3rem;
     color: var(--farve1);
     margin: 30px 0 0 0;
+    text-transform: uppercase;
 }
 
 .info_container .tekst {
@@ -539,6 +540,37 @@ button {
     text-align: center;
     color: #191919;
 }
+
+
+
+.color_box:nth-child(3) .img_container {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.color_box:nth-child(3) img {
+    position: absolute;
+    animation: rotation 10s infinite linear;
+
+}
+
+
+
+
+
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+
 
 
 
@@ -822,7 +854,7 @@ button {
     /*footer*/
     #footer_container {
         font-size: 5.8vw;
-        line-height: 11vw;
+        line-height: 9vw;
     }
 }
 
@@ -955,7 +987,7 @@ button {
 
 
     #footer_container {
-        font-size: 81px;
+        font-size: 78px;
         line-height: 121.9px;
     }
 
