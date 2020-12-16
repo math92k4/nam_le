@@ -58,3 +58,25 @@ async function getFooter() {
 
 
 }
+
+
+
+
+window.onscroll = function () {
+    headerColor();
+}
+
+
+function headerColor() {
+
+    console.log("started");
+
+    let header = document.querySelector("header")
+
+    if (window.pageYOffset > 110) {
+
+        header.style.backgroundColor = "white";
+    } else {
+        header.style.backgroundColor = "var(--farve3)";
+    }
+}
