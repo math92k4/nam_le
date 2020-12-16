@@ -14,34 +14,20 @@
     <header></header>
     <section id="forside_section">
         <div id="forside_container">
-            <div id="nam"></div>
+            <div id="zero"></div>
             <!--            <img src="" alt="" id="forsidevideo">-->
             <video src="img/forside_udkast_2.mp4" id="forsidevideo" autoplay muted loop></video>
             <div id="desktop_tag_le">
-                <div id="le"></div>
+                <div id="waste"></div>
                 <div class="tagline_mobile_align">
-                    <h1 id="tagline"></h1>
+                    <h1 id="tagline">SUSTAINABLE CLOTHING</h1>
                 </div>
             </div>
         </div>
     </section>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", getTheContent);
 
-
-        async function getTheContent() {
-            let page;
-            let url = "https://mathaeusss.dk/kea/2_semester/nam_le/wordpress/wp-json/wp/v2/frontpage/13";
-            let jsonData = await fetch(url);
-            page = await jsonData.json();
-            document.querySelector("h1").textContent = page.tagline;
-            //            document.querySelector("#forsidevideo").src = page.forsidevideo.guid;
-
-            console.log(page);
-        }
-    </script>
 
 </body>
 
