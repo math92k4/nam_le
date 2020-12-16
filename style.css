@@ -330,42 +330,41 @@ footer {
 #store_section {
     position: relative;
     z-index: 2;
-    background-color: white;
+    background-color: var(--farve3);
     box-shadow: var(--shadowf);
 
-    padding: 65px 10px;
+    padding: 65px 10px 65px 10px;
 }
 
 .store_container {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-
 }
 
-.infobox {}
+
 
 .navn,
 #navn_hover {
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
 }
 
 .pris,
 #pris_hover {
     font-weight: 200;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 
 
 #tooltip {
     position: fixed;
-    background-color: rgba(178, 172, 161, 0.9);
+    background-color: rgba(256, 256, 256, 0.9);
 
     display: none;
     z-index: 100;
-    padding: 10px;
+    padding: 20px;
 }
 
 .show_tooltip {
@@ -520,8 +519,7 @@ button {
 .main_h1 {
     font-size: 2rem;
     text-align: center;
-    margin: 65px 0;
-    color: var(--farve2);
+    color: #191919;
 }
 
 
@@ -583,6 +581,9 @@ button {
 
 @media (min-width: 500px) {
 
+    .main_h1 {
+        font-size: 3rem;
+    }
 
     /**** FORSIDE ****/
 
@@ -653,7 +654,7 @@ button {
 
     #footer_container {
         font-size: 5.5vw;
-        line-height: 8vw;
+        line-height: 11vw;
     }
 
     .cirkle {
@@ -680,6 +681,10 @@ button {
 
 @media (min-width: 700px) {
 
+
+    .main_h1 {
+        font-size: 4rem;
+    }
 
     /* Header fold ud */
 
@@ -749,6 +754,10 @@ button {
 
 @media (min-width: 1000px) {
 
+    .main_h1 {
+        font-size: 5rem;
+    }
+
 
     /* Store*/
     .show_tooltip {
@@ -779,6 +788,8 @@ button {
 
 /* forsidens reltive værdier ændres til faste (altså fra vw til px) */
 @media (min-width: 1130px) {
+
+
 
     /* udregning af ny fast margin på forside splash.  eks 1130 (100vw) * 0.1 (10vw) = 113px*/
     #nam {
@@ -861,6 +872,25 @@ button {
     .max_width {
         max-width: 1350px;
         margin: 0 auto;
+    }
+
+}
+
+
+@media (min-width: 1350px) {
+
+    .main_h1 {
+        font-size: 6rem;
+    }
+
+
+    #footer_container {
+        font-size: 74px;
+        line-height: 121.9px;
+    }
+
+    .cirkle {
+        margin: 0 68px;
     }
 
 }
