@@ -717,7 +717,7 @@ button {
     header {
         display: flex;
         background-color: var(--farve3);
-        transition: all .5s;
+        transition: all .8s;
     }
 
     #menu a {
@@ -791,6 +791,40 @@ button {
 
 /* forsidens reltive værdier ændres til faste (altså fra vw til px) */
 @media (min-width: 1130px) {
+
+
+    .store_container {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(auto-fill, 1fr);
+    }
+
+    .produkt_container:nth-child(5n-4) {
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+    .produkt_container:nth-child(5n-3) {
+        grid-column-start: 4;
+        grid-column-end: 6;
+    }
+
+    .produkt_container:nth-child(5n-2) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .produkt_container:nth-child(5n-1) {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+
+    .produkt_container:nth-child(5n) {
+        grid-column-start: 5;
+        grid-column-end: 7;
+    }
+
+
+
 
 
 
