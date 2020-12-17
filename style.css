@@ -87,8 +87,8 @@ header {
 }
 
 #header_logo {
-    font-weight: 700;
-    font-size: 2rem;
+    display: block;
+    width: 170px;
 }
 
 .right {
@@ -984,7 +984,6 @@ button {
 
     .wrapper {
         max-width: none;
-
     }
 
 
