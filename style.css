@@ -587,6 +587,13 @@ button {
 
 
 /******** STORY *******/
+
+.story_section {
+    min-height: 100vh;
+}
+
+
+
 .story_grid {
     display: grid;
 
