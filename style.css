@@ -274,7 +274,7 @@ footer {
 
 
 #zero {
-    background-image: url("img/zero_sort.svg");
+    background-image: url("img/zero.svg");
     background-size: cover;
     width: calc(12vw/81*300);
     height: 12vw;
@@ -286,7 +286,7 @@ footer {
 }
 
 #waste {
-    background-image: url("img/waste_sort.svg");
+    background-image: url("img/waste.svg");
     width: calc(12vw/63*300);
     height: 12vw;
     max-height: 126px;
@@ -540,6 +540,7 @@ button {
     font-size: 2rem;
     text-align: center;
     color: #191919;
+    margin: 65px 0 50px 0;
 }
 
 
@@ -870,11 +871,19 @@ button {
 @media (min-width: 1130px) {
 
 
+    /* https://css-tricks.com/examples/nth-child-tester/ */
+
+
+
+
+    /*
     .store_container {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: repeat(auto-fill, 1fr);
     }
+*/
 
+    /*
     .produkt_container:nth-child(5n-4) {
         grid-column-start: 1;
         grid-column-end: 4;
@@ -899,6 +908,61 @@ button {
         grid-column-start: 5;
         grid-column-end: 7;
     }
+*/
+
+
+    .store_container {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(auto-fill, 1fr);
+    }
+
+
+
+
+    .produkt_container:nth-child(7n-6) {
+        grid-column-start: 1;
+        grid-column-end: 6;
+        margin: -4px 0;
+    }
+
+    .produkt_container:nth-child(7n-5) {
+        grid-column-start: 7;
+        grid-column-end: 12;
+        margin: -4px 0;
+    }
+
+    .produkt_container:nth-child(7n-4) {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        margin: 0px 0;
+    }
+
+    .produkt_container:nth-child(7n-3) {
+        grid-column-start: 5;
+        grid-column-end: 9;
+        margin: 0px 0;
+    }
+
+    .produkt_container:nth-child(7n-2) {
+        grid-column-start: 9;
+        grid-column-end: 13;
+        margin: 0px 0;
+    }
+
+
+    .produkt_container:nth-child(7n-1) {
+        grid-column-start: 2;
+        grid-column-end: 7;
+        margin: -4px 0;
+    }
+
+    .produkt_container:nth-child(7n) {
+        grid-column-start: 8;
+        grid-column-end: 13;
+        margin: -4px 0;
+    }
+
+
 
 
 
