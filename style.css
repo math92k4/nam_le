@@ -468,6 +468,19 @@ button {
 
 
 /******* SUSTAINABILITY ******/
+
+.buet_h2 {
+    background-image: url(img/zero_waste.svg);
+    height: 76px;
+    width: 299px;
+    background-size: cover;
+    margin-top: 30px;
+}
+
+
+
+
+
 .info_section {
     position: relative;
     padding: 65px 0px;
@@ -509,7 +522,9 @@ button {
 
 .img_container {
     flex-grow: 1;
-    flex-basis: 300px
+    flex-basis: 300px;
+    display: flex;
+    align-items: center;
 }
 
 .info_container {
