@@ -592,13 +592,13 @@ button {
 
     grid-template-areas:
         "billede1"
-        "header2"
         "tekst"
         "billede2";
 
     max-width: 500px;
     margin: 0 auto;
     padding: 10px;
+
 }
 
 .story_grid .tekst {
@@ -612,21 +612,17 @@ button {
     text-transform: uppercase;
 }
 
-.story_grid h2 {
-    grid-area: header2;
-}
 
-
-.story_grid .billede1 {
+.story_grid #billede_1 {
     grid-area: billede1;
 }
 
-.story_grid .tekst {
+.story_grid .info_box {
     grid-area: tekst;
 }
 
 
-.story_grid .billede2 {
+.story_grid #billede_2 {
     grid-area: billede2;
 }
 
@@ -985,7 +981,26 @@ button {
     }
 
 
+    /*Story fold sammen*/
 
+    .story_grid {
+        grid-template-areas: "tekst tekst billede2 billede1"
+        ;
+        max-width: 1350px;
+        grid-template-columns: 1fr 1fr 0.5fr 1.5fr;
+
+    }
+
+    #billede_2 {
+        transform: translateX(50%)scale(1.7);
+        align-self: flex-end;
+        border: 5px solid var(--farve3);
+
+    }
+
+    .info_box {
+        margin: 0 auto;
+    }
 
     /************* singleview *********/
 
