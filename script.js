@@ -69,7 +69,6 @@ window.onscroll = function () {
 
 function headerColor() {
 
-    console.log("started");
 
     let header = document.querySelector("header")
 
@@ -77,6 +76,6 @@ function headerColor() {
 
         header.style.backgroundColor = "white";
     } else {
-        header.style.backgroundColor = "var(--farve3)";
+        header.style.backgroundColor = "transparent";
     }
 }
