@@ -346,6 +346,24 @@ footer {
 
 
 /****** STORE ******/
+
+
+.img_overflow {
+    overflow: hidden;
+    width: 100%;
+    height: 99%;
+}
+
+.hover_zoom_ani {
+    transition: 0.5s;
+}
+
+
+.hover_zoom_ani:hover {
+    transform: scale(1.02);
+}
+
+
 #store_section {
     position: relative;
     z-index: 2;
@@ -360,6 +378,18 @@ footer {
     grid-gap: 5px;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
+
+
+
+.produkt_container {
+    transition: all .5s;
+}
+
+.lazy {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
 
 
 
@@ -584,7 +614,7 @@ button {
     }
 
     to {
-        transform: rotate(359deg);
+        transform: rotate(-359deg);
     }
 }
 
@@ -625,6 +655,7 @@ button {
 
 .story_grid .tekst {
     padding-bottom: 65px;
+    margin: 10px 0 0 0;
 }
 
 .story_grid h2 {
@@ -872,6 +903,8 @@ button {
     }
 
 
+
+
     .store_container {
         grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     }
@@ -953,13 +986,13 @@ button {
     .produkt_container:nth-child(7n-6) {
         grid-column-start: 1;
         grid-column-end: 6;
-        margin: -4px 0;
+        margin: -7px 0;
     }
 
     .produkt_container:nth-child(7n-5) {
         grid-column-start: 7;
         grid-column-end: 12;
-        margin: -4px 0;
+        margin: -7px 0;
     }
 
     .produkt_container:nth-child(7n-4) {
@@ -984,13 +1017,13 @@ button {
     .produkt_container:nth-child(7n-1) {
         grid-column-start: 2;
         grid-column-end: 7;
-        margin: -4px 0;
+        margin: -7px 0;
     }
 
     .produkt_container:nth-child(7n) {
         grid-column-start: 8;
         grid-column-end: 13;
-        margin: -4px 0;
+        margin: -7px 0;
     }
 
 
@@ -1015,7 +1048,7 @@ button {
     #billede_2 {
         transform: translateX(50%)scale(1.7);
         align-self: flex-end;
-        border: 5px solid var(--farve3);
+        border: 3px solid var(--farve3);
 
     }
 
@@ -1028,7 +1061,7 @@ button {
     #view_section {
         position: relative;
         min-height: 100vh;
-        background-color: white;
+        background-color: var(--farve3);
         z-index: 2;
         display: flex;
         box-shadow: var(--shadowf);

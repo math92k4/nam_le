@@ -25,8 +25,10 @@
 <footer></footer>
 
 <template>
-    <div class="produkt_container">
-        <img src="" alt="">
+    <div class="produkt_container lazy">
+        <div class="img_overflow">
+            <img src="" alt="">
+        </div>
         <div class="infobox">
             <p class="navn"></p>
             <p class="pris"></p>
@@ -74,14 +76,35 @@
                 produkt.dataset.navn = pod.navn;
                 produkt.dataset.pris = pod.pris;
                 produkt.dataset.id = pod.id;
+
+                klon.querySelector("img").classList.add("hover_zoom_ani")
             }
 
             //Når tamplatet er udfyldt, indsættes det i vores container i html'en
             container.appendChild(klon);
         });
 
-
+        lazyLoading();
     }
+
+
+
+
+    function lazyLoading() {
+        const features = document.querySelectorAll(".produkt_container");
+        const observer = new IntersectionObserver(sections => {
+            sections.forEach(section => {
+                if (section.intersectionRatio > 0.2) {
+                    section.target.classList.remove('lazy');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+        features.forEach(feature => observer.observe(feature));
+    }
+
+
 
 
     //Tidligere nævnte data-attribut (produktets id) indsættes i singleview-url'en som et id. Derved kan id'et efterfølgende hentes ned med java i singleview.html
@@ -120,7 +143,4 @@
         toolTipPos.style.top = (y + 20) + 'px';
         toolTipPos.style.left = (x + 20) + 'px';
     };
-
-</script>
-
-</html>
+</script></html>
