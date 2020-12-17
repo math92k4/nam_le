@@ -50,12 +50,29 @@
 
             pods.forEach(pod => {
                 let klon = temp.cloneNode(true).content;
-                klon.querySelector("h2").textContent = pod.overskrift;
-                klon.querySelector("#billede").src = pod.billede.guid;
-                klon.querySelector(".tekst").innerHTML = pod.content.rendered;
-                container.appendChild(klon);
-            })
 
+                if (pod.overskrift == "Zero Waste") {
+                    klon.querySelector(".info_box").innerHTML = '<div class="buet_h2"></div><div class="tekst"></div>';
+                    klon.querySelector("#billede").src = pod.billede.guid;
+                    klon.querySelector(".tekst").innerHTML = pod.content.rendered;
+
+
+                } else if (pod.overskrift == "Our vision") {
+                    klon.querySelector(".img_container").innerHTML = '<video src="img/forside_5.mp4" id="forsidevideo" autoplay muted loop></video>'
+                    klon.querySelector("h2").textContent = pod.overskrift;
+                    klon.querySelector(".tekst").innerHTML = pod.content.rendered;
+
+
+                } else {
+                    klon.querySelector("h2").textContent = pod.overskrift;
+                    klon.querySelector("#billede").src = pod.billede.guid;
+                    klon.querySelector(".tekst").innerHTML = pod.content.rendered;
+
+                }
+
+                container.appendChild(klon);
+                console.log(pod.overskrift);
+            })
 
         }
     </script>
