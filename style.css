@@ -640,8 +640,6 @@ button {
 
 
     #zero {
-        background-image: url("img/zero.svg");
-        background-size: cover;
 
         /* ny absolut højde og bredde udregnet ved (skærmbredde) 500 * (vw) 0.12 = 60 (den nye fastlåste højde) */
         width: 204.5px;
@@ -654,7 +652,6 @@ button {
     }
 
     #waste {
-        background-image: url("img/waste.svg");
         width: 262.85px;
         height: 55.2px;
         max-height: 126px;
