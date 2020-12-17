@@ -541,6 +541,7 @@ button {
     text-align: center;
     color: #191919;
     margin: 65px 0 50px 0;
+    text-transform: uppercase;
 }
 
 
@@ -589,20 +590,32 @@ button {
 .story_grid {
     display: grid;
 
-    grid-template-areas: "header"
+    grid-template-areas:
         "billede1"
+        "header2"
         "tekst"
         "billede2";
 
     max-width: 500px;
     margin: 0 auto;
+    padding: 10px;
 }
 
-
-
-.story_grid h1 {
-    grid-area: header;
+.story_grid .tekst {
+    padding-bottom: 65px;
 }
+
+.story_grid h2 {
+    font-size: 3rem;
+    color: var(--farve1);
+    margin: 30px 0 0 0;
+    text-transform: uppercase;
+}
+
+.story_grid h2 {
+    grid-area: header2;
+}
+
 
 .story_grid .billede1 {
     grid-area: billede1;
