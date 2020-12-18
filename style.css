@@ -352,7 +352,6 @@ footer {
 .img_overflow {
     overflow: hidden;
     width: 100%;
-    height: 99%;
 }
 
 .hover_zoom_ani {
@@ -383,12 +382,12 @@ footer {
 
 
 .produkt_container {
-    transition: all .5s;
+    transition: all .5s ease-out;
 }
 
 .lazy {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(30px) translateX(30px);
 }
 
 
@@ -914,6 +913,10 @@ button {
         grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     }
 
+    .img_overflow {
+        height: 99%;
+    }
+
 
 
 
@@ -988,47 +991,70 @@ button {
 
 
 
-    .produkt_container:nth-child(7n-6) {
+    .produkt_container:nth-child(10n-9) {
         grid-column-start: 1;
         grid-column-end: 6;
         margin: -7px 0;
     }
 
-    .produkt_container:nth-child(7n-5) {
+    .produkt_container:nth-child(10n-8) {
         grid-column-start: 7;
         grid-column-end: 12;
         margin: -7px 0;
     }
 
-    .produkt_container:nth-child(7n-4) {
+    .produkt_container:nth-child(10n-7) {
         grid-column-start: 1;
         grid-column-end: 5;
         margin: 0px 0;
+
     }
 
-    .produkt_container:nth-child(7n-3) {
+    .produkt_container:nth-child(10n-6) {
         grid-column-start: 5;
         grid-column-end: 9;
         margin: 0px 0;
+        transition-delay: 0.1s;
     }
 
-    .produkt_container:nth-child(7n-2) {
+    .produkt_container:nth-child(10n-5) {
         grid-column-start: 9;
         grid-column-end: 13;
         margin: 0px 0;
+        transition-delay: 0.2s;
     }
 
 
-    .produkt_container:nth-child(7n-1) {
+    .produkt_container:nth-child(10n-4) {
         grid-column-start: 2;
         grid-column-end: 7;
         margin: -7px 0;
     }
 
-    .produkt_container:nth-child(7n) {
+    .produkt_container:nth-child(10n-3) {
         grid-column-start: 8;
         grid-column-end: 13;
         margin: -7px 0;
+    }
+
+    .produkt_container:nth-child(10n-2) {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        margin: 0px 0;
+    }
+
+    .produkt_container:nth-child(10n-1) {
+        grid-column-start: 5;
+        grid-column-end: 9;
+        margin: 0px 0;
+        transition-delay: 0.1s;
+    }
+
+    .produkt_container:nth-child(10n) {
+        grid-column-start: 9;
+        grid-column-end: 13;
+        margin: 0px 0;
+        transition-delay: 0.2s;
     }
 
 
