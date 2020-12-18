@@ -1014,14 +1014,14 @@ button {
         grid-column-start: 5;
         grid-column-end: 9;
         margin: 0px 0;
-        transition-delay: 0.1s;
+        transition-delay: 0.15s;
     }
 
     .produkt_container:nth-child(10n-5) {
         grid-column-start: 9;
         grid-column-end: 13;
         margin: 0px 0;
-        transition-delay: 0.2s;
+        transition-delay: 0.3s;
     }
 
 
@@ -1047,14 +1047,14 @@ button {
         grid-column-start: 5;
         grid-column-end: 9;
         margin: 0px 0;
-        transition-delay: 0.1s;
+        transition-delay: 0.15s;
     }
 
     .produkt_container:nth-child(10n) {
         grid-column-start: 9;
         grid-column-end: 13;
         margin: 0px 0;
-        transition-delay: 0.2s;
+        transition-delay: 0.3s;
     }
 
 
