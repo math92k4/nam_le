@@ -387,7 +387,7 @@ footer {
 
 .lazy {
     opacity: 0;
-    transform: translateY(30px) translateX(30px);
+    transform: translateY(30px) translateX(15px);
 }
 
 
