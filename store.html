@@ -62,6 +62,7 @@
             klon.querySelector(".navn").textContent = pod.navn;
             klon.querySelector(".pris").textContent = pod.pris;
             klon.querySelector("img").src = pod.billede.guid;
+            klon.querySelector("img").alt = pod.alt_tekst
 
             //Hvis podded har kategorien "produkt" (json spytter tallet 3 ud)
             if (pod.kategori == 3) {

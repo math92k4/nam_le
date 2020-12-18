@@ -29,7 +29,7 @@
         <div class="color_box">
             <div class="wrapper max_width">
                 <div class="img_container">
-                    <img src="" alt="" id="billede">
+                    <img src="" alt="" class="billede">
                 </div>
                 <div class="info_container">
                     <div class="info_box">
@@ -58,7 +58,8 @@
                 //zero waste pod, skal ikke have en h2, men den buede overskrift
                 if (pod.overskrift == "Zero Waste") {
                     klon.querySelector(".info_box").innerHTML = '<div class="buet_h2"></div><div class="tekst"></div>';
-                    klon.querySelector("#billede").src = pod.billede.guid;
+                    klon.querySelector(".billede").src = pod.billede.guid;
+                    klon.querySelector(".billede").alt = pod.alt_tekst
                     klon.querySelector(".tekst").innerHTML = pod.content.rendered;
 
                     //Our vision skal ikke have et img, men en video
@@ -70,8 +71,9 @@
                     //The cycle skal bare være som templatet siger
                 } else {
                     klon.querySelector("h2").textContent = pod.overskrift;
-                    klon.querySelector("#billede").src = pod.billede.guid;
+                    klon.querySelector(".billede").src = pod.billede.guid;
                     klon.querySelector(".tekst").innerHTML = pod.content.rendered;
+                    klon.querySelector(".billede").alt = pod.alt_tekst;
 
                 }
 

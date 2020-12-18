@@ -45,6 +45,8 @@
             document.querySelector("h2").textContent = page.overskrift;
             document.querySelector("#billede_1").src = page.billede_1.guid;
             document.querySelector("#billede_2").src = page.billede_2.guid;
+            document.querySelector("#billede_1").alt = page.billede1_alt;
+            document.querySelector("#billede_2").alt = page.billede2_alt;
             document.querySelector(".tekst").innerHTML = page.content.rendered;
 
             console.log(page);
