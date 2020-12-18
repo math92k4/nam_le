@@ -599,9 +599,13 @@ button {
 
 
 .color_box:nth-child(3) img {
-    position: absolute;
     animation: rotation 10s infinite linear;
 
+}
+
+
+.color_box:nth-child(3) .wrapper {
+    flex-wrap: wrap-reverse;
 }
 
 
