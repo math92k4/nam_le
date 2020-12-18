@@ -4,9 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sustainability</title>
+    <title>NAM LE Sustainability - Zero waste sustainable clothing</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/qxd3iug.css">
+
+    <meta name="description" content="Description of NAM LE's sustainable vision. We make trans-seasonal zero waste clothing. Watch the video to see the process of produktion.">
+
+    <meta name="keywords" content="GOTS-certified organic zero waste fashion recycling clothing">
 </head>
 
 <body>
@@ -59,7 +63,7 @@
 
                     //Our vision skal ikke have et img, men en video
                 } else if (pod.overskrift == "Our vision") {
-                    klon.querySelector(".img_container").innerHTML = '<video src="img/sustainability_video_done.mp4" id="forsidevideo" autoplay muted loop></video>'
+                    klon.querySelector(".img_container").innerHTML = '<video title="Video on how we make GOTS-certified organic zero waste fashion" src="img/sustainability_video_done.mp4" id="forsidevideo" autoplay muted loop></video>'
                     klon.querySelector("h2").textContent = pod.overskrift;
                     klon.querySelector(".tekst").innerHTML = pod.content.rendered;
 
