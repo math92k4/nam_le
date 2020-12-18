@@ -73,6 +73,7 @@ header {
     z-index: 4;
     width: 100%;
     background-color: transparent;
+    transition: all .8s;
 }
 
 /*flexer logo og burgermenu i mobil*/
@@ -837,7 +838,7 @@ button {
     header {
         display: flex;
         background-color: transparent;
-        transition: all .8s;
+
     }
 
     #menu a {
