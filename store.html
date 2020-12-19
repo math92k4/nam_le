@@ -29,7 +29,7 @@
 </body>
 <footer></footer>
 
-<template>
+<template id="template_prod">
     <div class="produkt_container lazy">
         <div class="img_overflow">
             <img src="" alt="">
@@ -41,31 +41,42 @@
     </div>
 </template>
 
+<template id="template_tekst">
+    <div class="produkt_container lazy">
+        <div class="img_overflow">
+            <img src="" alt="">
+        </div>
+    </div>
+</template>
+
 <script src="script.js"></script>
 <script>
+    //når DOM'en er loeaded startes "getTheContent"
     document.addEventListener("DOMContentLoaded", getTheContent);
 
 
     async function getTheContent() {
+        //variabler defineres og WP indhendtes som json-data (Et array med objekter)
         let pods;
         let url = "https://mathaeusss.dk/kea/2_semester/nam_le/wordpress/wp-json/wp/v2/store";
-        const temp = document.querySelector("template");
+        const temp = document.querySelector("#template_prod");
+        const temp2 = document.querySelector("#template_tekst");
         const container = document.querySelector(".store_container");
         let jsonData = await fetch(url);
         pods = await jsonData.json();
 
-        //For hvert pod
+        //For hvert post
         pods.forEach(pod => {
-            //kloner vi templaten fra html'en
-            let klon = temp.cloneNode(true).content;
-            //og indsætter de vores endpoints i de tilhørende tags i templatet.
-            klon.querySelector(".navn").textContent = pod.navn;
-            klon.querySelector(".pris").textContent = pod.pris;
-            klon.querySelector("img").src = pod.billede.guid;
-            klon.querySelector("img").alt = pod.alt_tekst
-
             //Hvis podded har kategorien "produkt" (json spytter tallet 3 ud)
             if (pod.kategori == 3) {
+                //kloner vi templaten fra html'en
+                let klon = temp.cloneNode(true).content;
+                //og indsætter de vores endpoints i de tilhørende tags i templatet.
+                klon.querySelector(".navn").textContent = pod.navn;
+                klon.querySelector(".pris").textContent = pod.pris;
+                klon.querySelector("img").src = pod.billede.guid;
+                klon.querySelector("img").alt = pod.alt_tekst
+
                 //(img'en bliver indsat i varabel for lethedens skyld)
                 let produkt = klon.querySelector("img");
 
@@ -73,21 +84,27 @@
                 produkt.style.cursor = "pointer";
                 //lytter på klik til singleview
                 produkt.addEventListener("click", singleView);
-                //lytter på hover ift tooltip (tooltip er det man kalder en hover-infobox  - vi ku kalde den hvad som helst)
-                //                produkt.addEventListener("mouseover", e => toolTip(e));
+                //hover funktion til produktinfo
                 produkt.addEventListener("mouseover", toolTip);
-                //lytter på vi fjerner musen igen så vi kan fjerne tooltip
+                //hover funktion til produktinfo når musen fjernes
                 produkt.addEventListener("mouseout", hideTooltip);
-                //Indsætter nedenstående data-atributter som vi skal bruge i senere funktioner
+                //Indsætter data-atributter som bruges i hover produktinfo
                 produkt.dataset.navn = pod.navn;
                 produkt.dataset.pris = pod.pris;
+                //Indsætter data-atributter som bruges til singleview
                 produkt.dataset.id = pod.id;
-
-                klon.querySelector("img").classList.add("hover_zoom_ani")
+                //hover zoom animation
+                klon.querySelector("img").classList.add("hover_zoom_ani");
+                //Når tamplatet er udfyldt, indsættes det i vores container i html'en
+                container.appendChild(klon);
+            } else {
+                //Infobillede indsættes
+                let klon = temp2.cloneNode(true).content;
+                klon.querySelector("img").src = pod.billede.guid;
+                klon.querySelector("img").alt = pod.alt_tekst
+                //Når tamplatet er udfyldt, indsættes det i vores container i html'en
+                container.appendChild(klon);
             }
-
-            //Når tamplatet er udfyldt, indsættes det i vores container i html'en
-            container.appendChild(klon);
         });
 
         lazyLoading();
