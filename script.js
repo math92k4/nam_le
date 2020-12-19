@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", getHeader);
 
 //henter menu fra header.html ind på sidens header-tag
-
 async function getHeader() {
     let header
 
@@ -18,9 +17,7 @@ async function getHeader() {
     getFooter();
 }
 
-
-
-//konstruerer burgermenuen
+//konstruerer burgermenuens funktionalitet
 function constructMenu() {
 
     const menuBtn = document.querySelector(".menu_btn");
@@ -39,16 +36,29 @@ function constructMenu() {
         }
     })
 
+}
 
+//når der scrolles startes funktionen headerColor
+window.onscroll = function () {
+    headerColor();
+}
+
+//Indhenter tallet for sidens top placering.
+//hvis tallet overstiger 110px, bliver header hvid.
+function headerColor() {
+
+
+    let header = document.querySelector("header")
+    if (window.pageYOffset > 110) {
+
+        header.style.backgroundColor = "white";
+    } else {
+        header.style.backgroundColor = "transparent";
+    }
 }
 
 
-
-
-
-
-//hent footer ind på alle sider//
-
+//Footer html indhentes og indsætter på sidens footer-tag
 async function getFooter() {
     let footer
     let footerUrl = "footer.html";
@@ -57,25 +67,4 @@ async function getFooter() {
     document.querySelector("footer").innerHTML = footer;
 
 
-}
-
-
-
-
-window.onscroll = function () {
-    headerColor();
-}
-
-
-function headerColor() {
-
-
-    let header = document.querySelector("header")
-
-    if (window.pageYOffset > 110) {
-
-        header.style.backgroundColor = "white";
-    } else {
-        header.style.backgroundColor = "transparent";
-    }
 }
