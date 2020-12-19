@@ -267,6 +267,7 @@ footer {
     /*    margin: 5vw auto 0 auto;*/
     max-height: 67px;
     max-width: 67px;
+    cursor: pointer;
 
 }
 
