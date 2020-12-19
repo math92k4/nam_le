@@ -258,6 +258,18 @@ footer {
 }
 
 
+#insta {
+    background-image: url("img/insta2.svg");
+    width: 7vw;
+    height: 7vw;
+    background-size: cover;
+    margin: 4vw 0 0 0;
+    /*    margin: 5vw auto 0 auto;*/
+    max-height: 67px;
+    max-width: 67px;
+
+}
+
 
 
 
@@ -785,6 +797,12 @@ button {
         margin: 0 5vw;
     }
 
+    #insta {
+        width: 5vw;
+        height: 5vw;
+        margin: 2.5vw 0 0 0;
+    }
+
 
 
 
@@ -1014,14 +1032,14 @@ button {
         grid-column-start: 5;
         grid-column-end: 9;
         margin: 0px 0;
-/*        transition-delay: 0.15s;*/
+        /*        transition-delay: 0.15s;*/
     }
 
     .produkt_container:nth-child(10n-5) {
         grid-column-start: 9;
         grid-column-end: 13;
         margin: 0px 0;
-/*        transition-delay: 0.3s;*/
+        /*        transition-delay: 0.3s;*/
     }
 
 
@@ -1047,14 +1065,14 @@ button {
         grid-column-start: 5;
         grid-column-end: 9;
         margin: 0px 0;
-/*        transition-delay: 0.15s;*/
+        /*        transition-delay: 0.15s;*/
     }
 
     .produkt_container:nth-child(10n) {
         grid-column-start: 9;
         grid-column-end: 13;
         margin: 0px 0;
-/*        transition-delay: 0.3s;*/
+        /*        transition-delay: 0.3s;*/
     }
 
 
@@ -1168,6 +1186,11 @@ button {
 
     .cirkle {
         margin: 0 68px;
+    }
+
+
+    #insta {
+        margin: 33px 0 0 0;
     }
 
 }
