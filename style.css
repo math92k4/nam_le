@@ -60,6 +60,17 @@ body {}
 
 
 
+#studio_section {
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+    background-color: var(--farve3);
+    padding: 100px;
+}
+
+#studio_section p {
+    text-align: center;
+}
 
 
 
@@ -659,8 +670,7 @@ button {
 .story_grid {
     display: grid;
 
-    grid-template-areas:
-        "billede1"
+    grid-template-areas: "billede1"
         "tekst"
         "billede2";
 
